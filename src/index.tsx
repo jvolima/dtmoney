@@ -17,6 +17,10 @@ createServer({
           type: "deposit",
           category: "Dev",
           amount: 6000,
+          priceFormatted: new Intl.NumberFormat('pt-BR', {
+            style: "currency",
+            currency: "BRL"
+          }).format(6000),
           createdAt: new Date("2022-01-15 09:00:00")
         },
         {
@@ -25,6 +29,10 @@ createServer({
           type: "withdraw",
           category: "Casa",
           amount: 1000,
+          priceFormatted: new Intl.NumberFormat('pt-BR', {
+            style: "currency",
+            currency: "BRL"
+          }).format(1000),
           createdAt: new Date("2022-01-18 11:00:00")
         }
       ]

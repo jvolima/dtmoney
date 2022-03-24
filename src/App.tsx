@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Modal from "react-modal";
 import { Dashboard } from "./components/Dashboard";
 import { Header } from "./components/Header";
@@ -11,13 +11,13 @@ Modal.setAppElement("#root")
 export function App() {
   const [isNewTransactionModalOpen, setIsNewTransactionModalOpen] = useState(false);
 
-  function handleOpenNewTransactionModal() {
+  const handleOpenNewTransactionModal = useCallback(() => {
     setIsNewTransactionModalOpen(true);
-  }
+  }, []);
 
-  function handleCloseNewTransactionModal() {
+  const handleCloseNewTransactionModal = useCallback(() => {
     setIsNewTransactionModalOpen(false);
-  }
+  }, []);
   
   return (
     <TransactionsProvider>

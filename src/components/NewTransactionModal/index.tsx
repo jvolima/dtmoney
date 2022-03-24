@@ -21,11 +21,17 @@ export function NewTransactionModal({ isOpen, onRequestClose }: NewTransactionMo
 
   async function handleCreateNewTransaction(event: FormEvent) {
     event.preventDefault();
+
+    const formatter = new Intl.NumberFormat('pt-BR', {
+      style: "currency",
+      currency: "BRL"
+    });
     
     await createTransaction({
       title,
       type,
       amount, 
+      priceFormatted: formatter.format(amount),
       category
     });
 

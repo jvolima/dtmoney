@@ -9,6 +9,7 @@ interface Transaction {
   id: number;
   title: string;
   amount: number;
+  priceFormatted: string;
   type: string;
   category: string;
   createdAt: string;
